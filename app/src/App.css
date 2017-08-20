@@ -1,0 +1,137 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  align-items: center;
+  height: 100vh;
+  margin-right: 120px;
+  margin-left: 120px;
+  background-color: rgba(34, 30, 36, 0.60);
+  color: white;
+
+}
+
+.background_image {
+  z-index: -1;
+  position: absolute;
+  background: url('http://na.leagueoflegends.com/sites/default/files/upload/environmentart-sru-04_1920.jpg') no-repeat;
+  height: 100vh;
+  width: 100%;
+  filter: blur(4px);
+  background-size: cover;
+}
+
+.search_box {
+  display: flex;
+  justify-content: center;
+  width: 70%;
+}
+.search_box button {
+  margin-top: 100px;
+  width: 60px;
+  background-color: lightskyblue; /* Green */
+  border: 2px solid #ccc;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+.player_rank {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+  font-family: helvetica;
+  font-weight: lighter;
+  font-size: 22px;
+  letter-spacing: .85px;
+}
+
+.top_middle {
+  display: flex;
+  justify-content: center;
+  width: 70%;
+  height: 130px;
+  background: rgba(38, 38, 38, 0.35);
+}
+.top_ranks {
+  width: 70%;
+  height: 130px;
+  background: rgba(38, 38, 38, 0.35);
+  display: flex; 
+  align-items: center; 
+  justify-content: left;
+}
+
+.player_pages {
+  margin-top: 50px;
+  display: flex; 
+  width: 70%;
+  height: 450px;
+  font-family: verdana;
+  font-weight: lighter;
+  font-size: 16px;
+  letter-spacing: .85px;
+  background: rgba(38, 38, 38, 0.35);
+}
+.player_masteries {
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  align-items: center;
+  height: 100%;
+  width: 33.3%;
+  background: rgba(38, 38, 38, 0.35);
+}
+.player_masteries h1 {
+  font-size: 22px;
+  font-weight: lighter;
+}
+.top_champs h1 {
+  font-size: 22px;
+  font-weight: lighter;
+}
+.player_runes h1 {
+  font-size: 22px;
+  font-weight: lighter;
+}
+.top_champs {
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  align-items: center;
+  height: 100%;
+  width: 33.3%;
+  background: rgba(38, 38, 38, 0.35);
+}
+.player_runes {
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  align-items: center;
+  height: 100%;
+  width: 33.3%;
+  background: rgba(38, 38, 38, 0.35);
+}
+
+
+
+input {
+  margin-top: 100px;
+  width: 200px;
+  display: flex;
+
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url('https://www.w3schools.com/css/searchicon.png');
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  transition: width 0.4s ease-in-out;
+}
