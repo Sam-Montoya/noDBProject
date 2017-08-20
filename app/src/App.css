@@ -8,7 +8,11 @@
   margin-left: 120px;
   background-color: rgba(34, 30, 36, 0.60);
   color: white;
-
+}
+.title {
+  font-size: 60px;
+  font-family: helvetica;
+  font-weight: lighter;
 }
 
 .background_image {
@@ -27,7 +31,8 @@
   width: 70%;
 }
 .search_box button {
-  margin-top: 100px;
+  margin-top: 40px;
+  margin-bottom: 30px;
   width: 60px;
   background-color: lightskyblue; /* Green */
   border: 2px solid #ccc;
@@ -37,6 +42,22 @@
   display: inline-block;
   font-size: 14px;
   border-radius: 4px;
+}
+.search_box input {
+  margin-top: 40px;
+  margin-bottom: 30px;
+  width: 200px;
+  display: flex;
+
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url('https://www.w3schools.com/css/searchicon.png');
+  background-position: 8px 7px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  transition: width 0.4s ease-in-out;
 }
 
 .player_rank {
@@ -63,8 +84,12 @@
   height: 130px;
   background: rgba(38, 38, 38, 0.35);
   display: flex; 
-  align-items: center; 
-  justify-content: left;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.top_ranks h1 {
+  margin-top: 10px;
 }
 
 .player_pages {
@@ -118,20 +143,3 @@
   background: rgba(38, 38, 38, 0.35);
 }
 
-
-
-input {
-  margin-top: 100px;
-  width: 200px;
-  display: flex;
-
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
-  background-color: white;
-  background-image: url('https://www.w3schools.com/css/searchicon.png');
-  background-position: 10px 10px; 
-  background-repeat: no-repeat;
-  padding: 12px 20px 12px 40px;
-  transition: width 0.4s ease-in-out;
-}

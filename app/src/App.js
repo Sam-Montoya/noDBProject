@@ -21,9 +21,9 @@ class App extends Component {
       userRunes: [],
       userSoloRank: '',
       userFlexRank: '',
-      recentChampOne: 'http://ddragon.leagueoflegends.com/cdn/6.24.1/img/champion/Lux.png',
-      recentChampTwo: 'http://ddragon.leagueoflegends.com/cdn/6.24.1/img/champion/Lux.png',
-      recentChampThree: 'http://ddragon.leagueoflegends.com/cdn/6.24.1/img/champion/Lux.png'
+      recentChampOne: '',
+      recentChampTwo: '',
+      recentChampThree: ''
     }
   }
 
@@ -71,6 +71,10 @@ class App extends Component {
 
       axios.get('/getUserRank/' + this.state.userID).then((response) => {
         console.log(response.data);
+        this.setState({
+          userFlexRank: 'Unranked',
+          userSoloRank: 'Unranked'
+        })
         var rank = response.data;
         for (let i = 0; i < rank.length; i++) {
           if (rank[i]) {
@@ -87,33 +91,33 @@ class App extends Component {
           }
         }
       });
-      // axios.get('/getUserMatches/' + this.state.userAccountID).then((response) => {
-      //   console.log(response.data);
-      //     var champOne = response.data.matches[0].champion;
-      //     var champTwo = response.data.matches[1].champion;
-      //     var champThree = response.data.matches[2].champion;
-      //   console.log(champOne);
-      //   axios.get('/getChampIcon/' + champOne).then((response) => {
-      //     console.log(response.data.image.full);
-      //     this.setState({
-      //       recentChampOne: 'http://ddragon.leagueoflegends.com/cdn/6.24.1/img/champion/' + response.data.image.full
-      //     })
-      //   });
+      axios.get('/getUserMatches/' + this.state.userAccountID).then((response) => {
+        console.log(response.data);
+          var champOne = response.data.matches[0].champion;
+          var champTwo = response.data.matches[1].champion;
+          var champThree = response.data.matches[2].champion;
+        console.log(champOne);
+        axios.get('/getChampIcon/' + champOne).then((response) => {
+          console.log(response.data.image.full);
+          this.setState({
+            recentChampOne: 'http://ddragon.leagueoflegends.com/cdn/6.24.1/img/champion/' + response.data.image.full
+          })
+        });
 
-      //   axios.get('/getChampIcon/' + champTwo).then((response) => {
-      //     console.log(response.data.image.full);
-      //     this.setState({
-      //       recentChampTwo: 'http://ddragon.leagueoflegends.com/cdn/6.24.1/img/champion/' + response.data.image.full
-      //     })
-      //   });
+        axios.get('/getChampIcon/' + champTwo).then((response) => {
+          console.log(response.data.image.full);
+          this.setState({
+            recentChampTwo: 'http://ddragon.leagueoflegends.com/cdn/6.24.1/img/champion/' + response.data.image.full
+          })
+        });
 
-      //   axios.get('/getChampIcon/' + champThree).then((response) => {
-      //     console.log(response.data.image.full);
-      //     this.setState({
-      //       recentChampThree: 'http://ddragon.leagueoflegends.com/cdn/6.24.1/img/champion/' + response.data.image.full
-      //     })
-      //   });
-      // });
+        axios.get('/getChampIcon/' + champThree).then((response) => {
+          console.log(response.data.image.full);
+          this.setState({
+            recentChampThree: 'http://ddragon.leagueoflegends.com/cdn/6.24.1/img/champion/' + response.data.image.full
+          })
+        });
+      });
     });
   }
 
@@ -138,19 +142,22 @@ class App extends Component {
     return (
       <div className="container">
         <img className="background_image" alt='' />
+        <h1 className='title'>noDBproject</h1>
         <section className='search_box'>
           <input onChange={(typing) => this.updateUserName(typing.target.value)} placeholder="Search.." />
           <button onClick={() => this.clickHandler()}>Go</button>
         </section>
         <section className="player_rank">
           <div className='top_ranks'>
-            <h1>Solo Q Rank: {this.state.userSoloRank}</h1>
+            <h1>Solo Q Rank:</h1>
+            <h1>{this.state.userSoloRank}</h1>
           </div>
           <div className='top_middle'>
             <img src={this.state.profilePic} />
           </div>
           <div className='top_ranks'>
-            <h1>Flex Q Rank: {this.state.userFlexRank}</h1>
+            <h1>Flex Q Rank:</h1>
+            <h1>{this.state.userFlexRank}</h1>
           </div>
         </section>
 
