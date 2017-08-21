@@ -6,6 +6,7 @@ import './App.css';
 import axios from 'axios';
 import { getUserInfo } from './service.js';
 import leagueData from './lol-champions.js';
+import Summoners from './components/Summoners.js';
 
 class App extends Component {
   constructor() {
@@ -26,6 +27,10 @@ class App extends Component {
       recentChampTwo: '',
       recentChampThree: ''
     }
+  }
+
+  saveSummoner(){
+    
   }
 
   updateUserName(userInput) {
@@ -103,9 +108,9 @@ class App extends Component {
         console.log('three ' + champThree);
 
         this.setState({
-          recentChampOne: 'http://ddragon.leagueoflegends.com/cdn/7.16.1/img/champion/' + this.state.allChamps[0].data[champOne].name + '.png',
-          recentChampTwo: 'http://ddragon.leagueoflegends.com/cdn/7.16.1/img/champion/' + this.state.allChamps[0].data[champTwo].name + '.png',
-          recentChampThree: 'http://ddragon.leagueoflegends.com/cdn/7.16.1/img/champion/' + this.state.allChamps[0].data[champThree].name + '.png'
+          recentChampOne: 'http://ddragon.leagueoflegends.com/cdn/7.16.1/img/champion/' + this.state.allChamps[0].data[champOne].key + '.png',
+          recentChampTwo: 'http://ddragon.leagueoflegends.com/cdn/7.16.1/img/champion/' + this.state.allChamps[0].data[champTwo].key + '.png',
+          recentChampThree: 'http://ddragon.leagueoflegends.com/cdn/7.16.1/img/champion/' + this.state.allChamps[0].data[champThree].key + '.png'
         })
       });
     });
