@@ -56,6 +56,21 @@ app.get('/getChampIcon/:champID', (request, res) => {
     }); 
 })
 
+app.get('/getChampName/:id', (request, response) => {
+    console.log(request.params.id);
+    leagueData.find((element) => {
+        if(element.id == request.params.id) {
+            response.send(element.name);
+        }
+    })
+})
+
+// app.get('/getChampions/', (request, res) => {
+//     axios.get('https://na1.api.riotgames.com/lol/static-data/v3/champions?locale=en_US&tags=info&dataById=true', {headers: headerParam})
+//     .then((response) => {
+//         res.send(response.data)
+//     })
+// })
 
 
-app.listen(3030, console.log('SERVER is running on port 3030'));
+app.listen(3040, console.log('SERVER is running on port 3040'));

@@ -3,26 +3,19 @@
   flex-direction: column;
   justify-content: top;
   align-items: center;
-  height: 100vh;
-  margin-right: 120px;
-  margin-left: 120px;
-  background-color: rgba(34, 30, 36, 0.60);
   color: white;
-}
-.title {
-  font-size: 60px;
-  font-family: helvetica;
-  font-weight: lighter;
-}
-
-.background_image {
-  z-index: -1;
-  position: absolute;
   background: url('http://na.leagueoflegends.com/sites/default/files/upload/environmentart-sru-04_1920.jpg') no-repeat;
   height: 100vh;
-  width: 100%;
-  filter: blur(4px);
-  background-size: cover;
+  position: absolute;
+  width: 100%; 
+}
+
+.title { 
+  margin-top: 40px;
+  font-family: 'SinkinSans100Thin'; 
+  font-weight: bold; 
+  font-style: normal; 
+  font-size: 65px;
 }
 
 .search_box {
@@ -31,34 +24,40 @@
   width: 70%;
 }
 .search_box button {
-  margin-top: 40px;
-  margin-bottom: 30px;
+  margin-top: 30px;
+  height: 38px;
   width: 60px;
   background-color: lightskyblue; /* Green */
-  border: 2px solid #ccc;
+  border: none;
   color: white;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 14px;
-  border-radius: 4px;
 }
 .search_box input {
-  margin-top: 40px;
-  margin-bottom: 30px;
-  width: 200px;
+  margin-top: 30px;
+  height: 14px;
+  width: 300px;
   display: flex;
 
-  border: 2px solid #ccc;
-  border-radius: 4px;
+  border: none;
   font-size: 16px;
   background-color: white;
   background-image: url('https://www.w3schools.com/css/searchicon.png');
   background-position: 8px 7px; 
   background-repeat: no-repeat;
   padding: 12px 20px 12px 40px;
-  transition: width 0.4s ease-in-out;
+  
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  transition: all .5s;
 }
+
+.search_box input:hover {
+  width: 340px;
+}
+
 
 .player_rank {
   margin-top: 50px;
@@ -66,80 +65,89 @@
   align-items: center;
   justify-content: center;
   width: 70%;
-  font-family: helvetica;
-  font-weight: lighter;
-  font-size: 22px;
+  height: 100px;
+  font-family: 'SinkinSans100Thin'; 
+  font-weight: lighter; 
+  font-size: 26px;
   letter-spacing: .85px;
 }
 
 .top_middle {
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 70%;
   height: 130px;
-  background: rgba(38, 38, 38, 0.35);
+  background: rgba(38, 38, 38, 0.60);
+  position: relative;
+}
+.profile_pic {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 130px;
+}
+.level_bar {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 30px;
+  bottom: 0;
+  background: rgba(38, 38, 38, 0.80);
+}
+.top_middle h3 {
+  font-size: 14px;
 }
 .top_ranks {
   width: 70%;
   height: 130px;
-  background: rgba(38, 38, 38, 0.35);
+  background: rgba(38, 38, 38, 0.60);
   display: flex; 
   flex-direction: column;
   justify-content: center;
   text-align: center;
 }
 .top_ranks h1 {
-  margin-top: 10px;
+  margin-top: 15px;
 }
 
 .player_pages {
-  margin-top: 50px;
+  margin-top: 30px;
   display: flex; 
   width: 70%;
   height: 450px;
-  font-family: verdana;
-  font-weight: lighter;
-  font-size: 16px;
+  font-family: 'SinkinSans100Thin'; 
+  font-size: 25px;
   letter-spacing: .85px;
-  background: rgba(38, 38, 38, 0.35);
+  background: rgba(38, 38, 38, 0.60);
 }
 .player_masteries {
   display: flex;
   flex-direction: column;
   justify-content: top;
+  margin-top: 10px;
   align-items: center;
-  height: 100%;
   width: 33.3%;
-  background: rgba(38, 38, 38, 0.35);
 }
-.player_masteries h1 {
-  font-size: 22px;
-  font-weight: lighter;
-}
-.top_champs h1 {
-  font-size: 22px;
-  font-weight: lighter;
-}
-.player_runes h1 {
-  font-size: 22px;
-  font-weight: lighter;
-}
+
 .top_champs {
   display: flex;
   flex-direction: column;
   justify-content: top;
+  margin-top: 10px;
   align-items: center;
-  height: 100%;
   width: 33.3%;
-  background: rgba(38, 38, 38, 0.35);
 }
 .player_runes {
   display: flex;
   flex-direction: column;
   justify-content: top;
+  margin-top: 10px;
   align-items: center;
-  height: 100%;
   width: 33.3%;
-  background: rgba(38, 38, 38, 0.35);
+  bottom: 0;
 }
 

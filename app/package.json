@@ -1,6 +1,6 @@
 {
   "name": "app",
-  "proxy": "http://localhost:3030",
+  "proxy": "http://localhost:3040",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
