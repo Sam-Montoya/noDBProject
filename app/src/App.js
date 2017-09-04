@@ -25,12 +25,20 @@ class App extends Component {
       userFlexRank: '',
       recentChampOne: '',
       recentChampTwo: '',
-      recentChampThree: ''
+      recentChampThree: '',
+      savedSummoners: []
     }
   }
 
   saveSummoner(){
-    
+    var recentSummoners = [this.state.recentChampOne, this.state.recentChampTwo, this.state.recentChampThree];
+    this.state.savedSummoners.push(new Summoners( this.state.userName,
+                                                  this.state.userSoloRank,
+                                                  this.state.userFlexRank,
+                                                  this.state.profilePic,
+                                                  this.state.userMasteries,
+                                                  this.state.userRunes,
+                                                  recentSummoners));
   }
 
   updateUserName(userInput) {
